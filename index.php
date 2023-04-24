@@ -1,6 +1,5 @@
-<?php
-
-get_header(); ?>
+<!-- Função que chama nosso header.php -->
+<?php get_header(); ?>
 
 <div class="max-w-4xl mx-auto px-4">
 
@@ -8,17 +7,5 @@ get_header(); ?>
   <div id="render-react-example-here"></div>
   <!-- Exemplo final do componente React -->
 
-  <div class="prose max-w-full">
-    <?php if (have_posts()) {
-      while(have_posts()) {
-        the_post(); ?>
-        <div>
-          <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-          <?php the_content(); ?>
-        </div>
-      <?php }
-    } ?>
-  </div>
-</div>
-
-<?php get_footer();
+<!-- Função que chama nosso footer.php -->
+<?php get_footer(); 

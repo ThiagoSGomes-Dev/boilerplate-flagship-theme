@@ -1,9 +1,12 @@
-import Person from "./scripts/Person"
+import MyMenu from "./scripts/MyMenu"
 import ExampleReactComponent from "./scripts/ExampleReactComponent"
 import React from "react"
 import ReactDOM from "react-dom"
 
-const person1 = new Person("Brad")
+if (document.querySelector("#MyMenu")) {
+  ReactDOM.render(<MyMenu />, document.querySelector("#MyMenu"))
+}
+
 if (document.querySelector("#render-react-example-here")) {
   ReactDOM.render(<ExampleReactComponent />, document.querySelector("#render-react-example-here"))
 }

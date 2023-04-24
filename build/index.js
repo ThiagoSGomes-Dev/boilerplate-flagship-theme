@@ -18,11 +18,11 @@ __webpack_require__.r(__webpack_exports__);
 function ExampleReactComponent() {
   const [clickCount, setClickCount] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "bg-gradient-to-r from-blue-500 to-green-600 text-white p-4 rounded-md",
+    className: "bg-gradient-to-r from-cyan-300 to-stone-900 text-white p-4 rounded-md",
     onClick: () => setClickCount(prev => prev + 1)
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", {
     className: "text-xl"
-  }, "Sauda\xE7\xF5es do React!"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+  }, "Sauda\xE7\xF5es do React + Wordpress!"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "text-sm"
   }, "Voc\xEA clicou neste componente ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "text-yellow-200 font-bold"
@@ -32,23 +32,48 @@ function ExampleReactComponent() {
 
 /***/ }),
 
-/***/ "./src/scripts/Person.js":
+/***/ "./src/scripts/MyMenu.js":
 /*!*******************************!*\
-  !*** ./src/scripts/Person.js ***!
+  !*** ./src/scripts/MyMenu.js ***!
   \*******************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-class Person {
-  constructor(name) {
-    this.name = name;
-    this.greet();
-  }
-  greet() {
-    console.log(`Olá meu nome é ${this.name}.`);
-  }
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function MyMenu(props) {
+  const [menuItems, setMenuItems] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
+  const [isLoading, setIsLoading] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true);
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
+    fetch('/wp-json/boilerplate-flagship-theme/v1/menu/').then(response => response.json()).then(data => {
+      setMenuItems(data);
+      setIsLoading(false);
+    });
+  }, []);
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("nav", {
+    className: "bg-cyan-500"
+  }, isLoading ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
+    className: "flex gap-6 max-w-4xl mx-auto mb-5 px-4 text-slate-50"
+  }, [1, 2, 3].map(index => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
+    className: "text-1xl py-5",
+    key: index
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "animate-pulse-slow bg-slate-50 h-5 rounded-sm w-20"
+  })))) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
+    className: "flex gap-6 max-w-4xl mx-auto mb-5 px-4 text-slate-50"
+  }, menuItems.map((item, index) => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
+    className: "text-1xl py-5",
+    key: index
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    className: "hover:text-blue-500",
+    href: item.url
+  }, item.title)))));
 }
-/* harmony default export */ __webpack_exports__["default"] = (Person);
+/* harmony default export */ __webpack_exports__["default"] = ((0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(MyMenu));
 
 /***/ }),
 
@@ -159,7 +184,7 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _scripts_Person__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scripts/Person */ "./src/scripts/Person.js");
+/* harmony import */ var _scripts_MyMenu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scripts/MyMenu */ "./src/scripts/MyMenu.js");
 /* harmony import */ var _scripts_ExampleReactComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scripts/ExampleReactComponent */ "./src/scripts/ExampleReactComponent.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
@@ -170,7 +195,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const person1 = new _scripts_Person__WEBPACK_IMPORTED_MODULE_1__["default"]("Brad");
+if (document.querySelector("#MyMenu")) {
+  react_dom__WEBPACK_IMPORTED_MODULE_4___default().render((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_scripts_MyMenu__WEBPACK_IMPORTED_MODULE_1__["default"], null), document.querySelector("#MyMenu"));
+}
 if (document.querySelector("#render-react-example-here")) {
   react_dom__WEBPACK_IMPORTED_MODULE_4___default().render((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_scripts_ExampleReactComponent__WEBPACK_IMPORTED_MODULE_2__["default"], null), document.querySelector("#render-react-example-here"));
 }
