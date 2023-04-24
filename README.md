@@ -10,47 +10,69 @@ Este projeto está em fase de desenvolvimento e está aberto a sugestões e melh
 
 1.  Clone o repositório em sua pasta de temas do WordPress:
     
-    ```git clone https://github.com/seu-usuario/boilerplate-flagship-theme.git wp-content/themes/``` 
-    
+    ```bash
+       git clone https://github.com/seu-usuario/boilerplate-flagship-theme.git wp-content/themes/
+    ```
+
 2.  Instale as dependências do projeto:
     
-    ```npm install``` 
+    ```bash
+       npm install
+    ```
     
 ## Scripts
 
-### ```npm run preview```
+    ```bash
+       npm run preview
+    ```
 
 Inicia o BrowserSync e os processos de sincronização de arquivos, inicia o servidor de desenvolvimento do WordPress e assiste as alterações nos arquivos do Tailwind CSS.
 
-### ```npm run sync```
+    ```bash
+        npm run sync
+    ```
 
 Inicia o BrowserSync e os processos de sincronização de arquivos.
 
-### ```npm run buildwp```
+    ```bash
+        npm run buildwp
+    ```
 
 Compila os arquivos JavaScript do tema para a pasta `build/`.
 
-### ```npm run build```
+    ```bash
+        npm run build
+    ```
 
 Compila os arquivos JavaScript e CSS do tema para a pasta `build/`.
 
-### ```npm run wpstart```
+   ```bash
+       npm run wpstart
+   ```
 
 Inicia o servidor de desenvolvimento do WordPress.
 
-### ```npm run start```
+   ```bash
+       npm run start
+   ```
 
 Inicia o servidor de desenvolvimento do WordPress e assiste as alterações nos arquivos do Tailwind CSS.
 
-### ```npm run tailwindbuild```
+   ```bash
+       npm run tailwindbuild
+   ```
 
 Compila os arquivos CSS do Tailwind para a pasta `build/`.
 
-### ```npm run tailwindwatch```
+   ```bash
+       npm run tailwindwatch
+   ```
 
 Assiste as alterações nos arquivos do Tailwind CSS e compila os arquivos para a pasta `build/`.
 
-### ```npm run test```
+   ```bash
+       npm run test
+   ```
 
 Exibe uma mensagem de erro informando que nenhum teste foi especificado.
 
