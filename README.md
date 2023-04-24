@@ -22,27 +22,27 @@ Este projeto está em fase de desenvolvimento e está aberto a sugestões e melh
     
 ## Scripts
 
-    ```bash
+   ```bash
        npm run preview
-    ```
+   ```
 
 Inicia o BrowserSync e os processos de sincronização de arquivos, inicia o servidor de desenvolvimento do WordPress e assiste as alterações nos arquivos do Tailwind CSS.
 
-    ```bash
+   ```bash
         npm run sync
-    ```
+   ```
 
 Inicia o BrowserSync e os processos de sincronização de arquivos.
 
-    ```bash
+   ```bash
         npm run buildwp
-    ```
+   ```
 
 Compila os arquivos JavaScript do tema para a pasta `build/`.
 
-    ```bash
+   ```bash
         npm run build
-    ```
+   ```
 
 Compila os arquivos JavaScript e CSS do tema para a pasta `build/`.
 
